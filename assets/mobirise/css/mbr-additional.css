@@ -798,6 +798,27 @@ a {
   line-height: 55px;
   padding: .6rem;
 }
+.cid-sLsNgbSH4e {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+@media (max-width: 991px) {
+  .cid-sLsNgbSH4e .image-wrapper {
+    margin-bottom: 1rem;
+  }
+}
+.cid-sLsNgbSH4e .row {
+  flex-direction: row-reverse;
+}
+.cid-sLsNgbSH4e img {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .cid-sLsNgbSH4e .text-wrapper {
+    padding: 2rem;
+  }
+}
 .cid-sLsBa0hfWO {
   padding-top: 6rem;
   padding-bottom: 6rem;
