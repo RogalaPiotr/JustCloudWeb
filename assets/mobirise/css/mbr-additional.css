@@ -1245,51 +1245,26 @@ a {
     padding: 2rem;
   }
 }
-.cid-sLxThYzSvT {
+.cid-sLEYABGQLy {
   padding-top: 10rem;
   padding-bottom: 10rem;
+  background-image: url("../../../assets/images/wysoki-slask-wroclaw-rynek2-2000x1123.jpg");
+}
+.cid-sLEYABGQLy .mbr-overlay {
   background-color: #ffffff;
+  opacity: 0.9;
 }
-@media (min-width: 991px) {
-  .cid-sLxThYzSvT .container-fluid {
-    padding-left: 0;
-  }
-}
-.cid-sLxThYzSvT .mbr-text,
-.cid-sLxThYzSvT .mbr-section-btn {
-  color: #232323;
-}
-@media (max-width: 991px) {
-  .cid-sLxThYzSvT .mbr-text,
-  .cid-sLxThYzSvT .mbr-section-btn {
-    text-align: center;
-  }
-}
-@media (max-width: 991px) {
-  .cid-sLxThYzSvT .mbr-text,
-  .cid-sLxThYzSvT .mbr-section-title {
-    text-align: center;
-  }
-}
-.cid-sLxThYzSvT a.btn {
-  height: 100%;
-  margin: 0;
-}
-.cid-sLxThYzSvT .mbr-section-btn {
-  display: flex;
-  margin-bottom: 1rem;
+.cid-sLEYABGQLy form .mbr-section-btn {
+  text-align: center;
   width: 100%;
 }
-.cid-sLxThYzSvT .mbr-section-btn .btn {
-  width: 100%;
+.cid-sLEYABGQLy form .mbr-section-btn .btn {
+  display: inline-flex;
 }
 @media (max-width: 991px) {
-  .cid-sLxThYzSvT .image-wrapper {
-    margin-bottom: 2rem;
+  .cid-sLEYABGQLy form .mbr-section-btn .btn {
+    width: 100%;
   }
-}
-.cid-sLxThYzSvT .justify-content-center {
-  align-items: center;
 }
 .cid-sLs1lHmIqf {
   padding-top: 1rem;
