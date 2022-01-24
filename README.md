@@ -1,2 +1,2 @@
 # JustCloudWeb
-JustCloud.pl Landing Page
+Static page JustCloud.pl based on static pages using GitHub pages
