@@ -582,9 +582,6 @@ a:hover {
   color: #ffffff;
 }
 /* Scroll to top button*/
-.scrollToTop_wraper {
-  display: none;
-}
 .form-control {
   font-family: 'Jost', sans-serif;
   font-size: 1.1rem;
@@ -1286,7 +1283,7 @@ a {
 }
 .cid-sLEYABGQLy .mbr-overlay {
   background-color: #ffffff;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .cid-sLEYABGQLy form .mbr-section-btn {
   text-align: center;
@@ -1301,8 +1298,8 @@ a {
   }
 }
 .cid-sLs1lHmIqf {
-  padding-top: 3rem;
-  padding-bottom: 7rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   background-color: #232323;
 }
 .cid-sLs1lHmIqf .row-links {
@@ -1744,8 +1741,8 @@ a {
   text-align: left;
 }
 .cid-sLs1lHmIqf {
-  padding-top: 3rem;
-  padding-bottom: 7rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   background-color: #232323;
 }
 .cid-sLs1lHmIqf .row-links {
@@ -2187,8 +2184,8 @@ a {
   text-align: left;
 }
 .cid-sLs1lHmIqf {
-  padding-top: 3rem;
-  padding-bottom: 7rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   background-color: #232323;
 }
 .cid-sLs1lHmIqf .row-links {
