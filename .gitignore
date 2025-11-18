@@ -1,2 +1,20 @@
+# macOS
 .DS_Store
-mobirise
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
