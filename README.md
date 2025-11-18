@@ -1,6 +1,13 @@
 # JustCloud.pl Website
 
-[🇬🇧 English](#-english) | [🇵🇱 Polski](#-polski)
+## 🇵🇱 Polski
+
+To repozytorium zawiera kod źródłowy strony **JustCloud.pl**.
+
+Jest to lekka, **statyczna strona internetowa** zaprojektowana z myślą o prostocie i wydajności.
+
+* **Technologia:** HTML5, CSS3, Czysty JavaScript.
+* **Hosting:** Hostowana bezpośrednio przez **GitHub Pages**.
 
 ---
 
@@ -12,14 +19,3 @@ It is a lightweight, **static website** designed for simplicity and performance.
 
 * **Technology:** HTML5, CSS3, Vanilla JavaScript.
 * **Hosting:** Hosted directly via **GitHub Pages**.
-
----
-
-## 🇵🇱 Polski
-
-To repozytorium zawiera kod źródłowy strony **JustCloud.pl**.
-
-Jest to lekka, **statyczna strona internetowa** zaprojektowana z myślą o prostocie i wydajności.
-
-* **Technologia:** HTML5, CSS3, Czysty JavaScript.
-* **Hosting:** Hostowana bezpośrednio przez **GitHub Pages**.
