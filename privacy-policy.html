@@ -100,10 +100,20 @@
                     <span class="font-space-mono font-bold text-xl sm:text-2xl text-jc-blue-600 dark:text-jc-blue-300">JustCloud.pl</span>
                 </a>
                 
-                <!-- Back to Home Button -->
-                <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-jc-blue-600 dark:hover:text-jc-blue-300 transition-colors">
-                    ← Powrót na stronę główną
-                </a>
+                <!-- Dark Mode Toggle & Back Button -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" type="button" class="p-2 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" aria-label="Toggle dark mode">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-jc-blue-600 dark:hover:text-jc-blue-300 transition-colors">
+                        ← Powrót na stronę główną
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
@@ -485,6 +495,47 @@
 
             // Initial highlighting
             pickActiveSection();
+        })();
+    </script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        (function() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const html = document.documentElement;
+
+            // Check for saved theme preference or default to system preference
+            const getThemePreference = () => {
+                if (localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            // Set theme
+            const setTheme = (theme) => {
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    darkIcon?.classList.remove('hidden');
+                    lightIcon?.classList.add('hidden');
+                } else {
+                    html.classList.remove('dark');
+                    darkIcon?.classList.add('hidden');
+                    lightIcon?.classList.remove('hidden');
+                }
+                localStorage.setItem('theme', theme);
+            };
+
+            // Initialize theme
+            setTheme(getThemePreference());
+
+            // Toggle theme
+            themeToggleBtn?.addEventListener('click', () => {
+                const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
         })();
     </script>
 </body>
