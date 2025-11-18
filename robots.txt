@@ -1,2 +1,156 @@
+# JustCloud.pl - Robots.txt
+# https://justcloud.pl/robots.txt
+
+# Default rules for all crawlers
 User-agent: *
-Disallow: /cgi-bin
+Allow: /
+Crawl-delay: 1
+
+# Sitemaps (for all search engines)
+Sitemap: https://justcloud.pl/sitemap.xml
+
+# Disallow search results and filter pages
+Disallow: /search
+Disallow: /*?*
+
+# Allow crawling of important resources
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /sitemap.xml
+Allow: /favicon.ico
+Allow: /site.webmanifest
+Allow: /BingSiteAuth.xml
+
+# Logo and social media images (important for rich snippets!)
+Allow: /img/logo.png
+Allow: /img/logo.svg
+Allow: /img/justcloud-social-card.png
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /img/
+
+# Bing-specific rules (IMPORTANT for Bing SEO!)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /img/
+
+# Yahoo (powered by Bing)
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo (uses Bing index)
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# AI Search Engines - Allow indexing for traffic & discoverability
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 2
+
+# Block AI Training - Protect content from being used in model training
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# Rate limit aggressive SEO crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: Rogerbot
+Crawl-delay: 10
+
+# Block known bad bots
+User-agent: MauiBot
+Disallow: /
+
+User-agent: AlphaBot
+Disallow: /
+
+User-agent: sqlmap
+Disallow: /
+
+User-agent: Nuclei
+Disallow: /
+
+User-agent: wikto
+Disallow: /
+
+User-agent: nikto
+Disallow: /
+
+User-agent: wpscan
+Disallow: /
+
+User-agent: Nmap
+Disallow: /
+
+User-agent: masscan
+Disallow: /
+
+User-agent: ZmEu
+Disallow: /
