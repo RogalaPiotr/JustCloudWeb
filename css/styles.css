@@ -244,11 +244,7 @@ html.dark ::-webkit-scrollbar-thumb {
     object-fit: cover;
     object-position: center;
     will-change: transform;
-    /* Fallback for Brave */
     transform: scale(1);
-    /* Optimize for mobile */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
 
 @keyframes hero-zoom {
@@ -263,14 +259,9 @@ html.dark ::-webkit-scrollbar-thumb {
 
 /* Hero Overlay - Static gradient (optimized for performance) */
 .hero-overlay {
-    /* Solid fallback for Brave */
     background-color: rgba(17, 24, 39, 0.5);
-    /* Gradient for Chrome */
     background-image: linear-gradient(to bottom right, rgba(17, 24, 39, 0.4), rgba(37, 99, 235, 0.4), rgba(31, 41, 55, 0.4));
     background-size: 100% 100%;
-    /* Optimize rendering on mobile */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 /* Animated Grid Effect - Removed for performance */
@@ -280,12 +271,10 @@ html.dark ::-webkit-scrollbar-thumb {
         linear-gradient(rgba(0, 167, 228, 0.2) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 167, 228, 0.2) 1px, transparent 1px);
     background-size: 50px 50px;
-    /* Removed grid-move animation - was causing lag */
 }
 
 /* Hero Content Entrance Animations */
 .hero-content {
-    /* Fallback for Brave - ensure content is visible */
     opacity: 1;
     transform: translate3d(0, 0, 0);
     animation: fade-in-up 1s ease-out;
@@ -695,28 +684,10 @@ html.dark *:focus-visible {
 @media (max-width: 768px) {
     /* Disable complex effects on mobile for better performance */
     @supports not (backdrop-filter: blur(12px)) {
-
         .backdrop-blur-sm,
         [class*="backdrop-blur"] {
             background-color: rgba(59, 130, 246, 0.25) !important;
         }
-    }
-
-    /* Force hardware acceleration on mobile */
-    .hero-bg,
-    .hero-overlay,
-    .hero-content {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        will-change: auto;
-    }
-
-    /* Prevent webkit blur issues on mobile */
-    img,
-    picture {
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        transform: translateZ(0);
     }
 }
 
@@ -724,51 +695,22 @@ html.dark *:focus-visible {
    Responsive Adjustments
    ========================================================================== */
 
-/* Mobile: Reduce hero text glow and fix rendering issues */
+/* Mobile: Keep desktop styles but disable animations for performance */
 @media (max-width: 640px) {
-    .hero-glow {
-        text-shadow:
-            0 0 5px rgba(0, 167, 228, 0.2),
-            0 0 10px rgba(0, 167, 228, 0.1);
-    }
-
-    /* Mobile-specific fixes for Brave */
     .hero-bg {
-        /* Disable animation on mobile for better performance */
         animation: none !important;
         transform: scale(1) !important;
     }
 
-    .hero-overlay {
-        /* Stronger overlay for better text readability on mobile */
-        background-color: rgba(17, 24, 39, 0.6) !important;
-        background-image: linear-gradient(to bottom right, rgba(17, 24, 39, 0.5), rgba(37, 99, 235, 0.5), rgba(31, 41, 55, 0.5)) !important;
-    }
-
-    .hero-grid {
-        /* Disable grid on mobile */
-        background-image: none !important;
-        opacity: 0 !important;
-    }
-
     .hero-title {
-        /* Simplified text shadow for mobile */
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.3) !important;
         animation: none !important;
     }
 
-    .hero-subtitle {
-        /* Ensure visibility on mobile */
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
-    }
-
     .animate-pulse-slow {
-        /* Disable pulse animation on mobile */
         animation: none !important;
         opacity: 1 !important;
     }
 
-    /* Fix backdrop-blur on mobile Brave */
     .backdrop-blur-sm,
     [class*="backdrop-blur"] {
         backdrop-filter: none !important;
@@ -776,14 +718,18 @@ html.dark *:focus-visible {
         background-color: rgba(59, 130, 246, 0.2) !important;
     }
 
-    /* Ensure CTA buttons are fully visible */
     .cta-button-primary,
     .cta-button-secondary {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-    /* Header adjustments for mobile */
     #header {
         backdrop-filter: blur(8px) !important;
         -webkit-backdrop-filter: blur(8px) !important;
