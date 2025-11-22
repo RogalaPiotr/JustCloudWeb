@@ -582,40 +582,63 @@
     });
 
     // ==========================================================================
-    // IT Feeds Days Counter
+    // IT Feeds Days Counter (triggered on section visibility)
     // ==========================================================================
 
     const daysCounter = document.getElementById('days-counter');
     
     if (daysCounter) {
-        // Project start date: March 29, 2024
-        const startDate = new Date('2024-03-29');
-        const today = new Date();
+        let hasAnimated = false;
         
-        // Calculate difference in days
-        const diffTime = Math.abs(today - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        
-        // Animated counter effect
-        const duration = 2000; // 2 seconds
-        const frameRate = 60; // frames per second
-        const totalFrames = (duration / 1000) * frameRate;
-        const increment = diffDays / totalFrames;
-        
-        let currentCount = 0;
-        let frame = 0;
-        
-        const counterAnimation = setInterval(() => {
-            frame++;
-            currentCount += increment;
+        const animateDaysCounter = () => {
+            if (hasAnimated) return; // Animate only once
+            hasAnimated = true;
             
-            if (frame >= totalFrames) {
-                currentCount = diffDays;
-                clearInterval(counterAnimation);
-            }
+            // Project start date: March 29, 2024
+            const startDate = new Date('2024-03-29');
+            const today = new Date();
             
-            daysCounter.textContent = Math.floor(currentCount);
-        }, 1000 / frameRate);
+            // Calculate difference in days
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            // Animated counter effect
+            const duration = 2000; // 2 seconds
+            const frameRate = 60; // frames per second
+            const totalFrames = (duration / 1000) * frameRate;
+            const increment = diffDays / totalFrames;
+            
+            let currentCount = 0;
+            let frame = 0;
+            
+            const counterAnimation = setInterval(() => {
+                frame++;
+                currentCount += increment;
+                
+                if (frame >= totalFrames) {
+                    currentCount = diffDays;
+                    clearInterval(counterAnimation);
+                }
+                
+                daysCounter.textContent = Math.floor(currentCount);
+            }, 1000 / frameRate);
+        };
+        
+        // Observe IT Feeds section
+        const itFeedsSection = document.getElementById('itfeeds');
+        if (itFeedsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateDaysCounter();
+                    }
+                });
+            }, {
+                threshold: 0.3 // Trigger when 30% of section is visible
+            });
+            
+            observer.observe(itFeedsSection);
+        }
     }
 
     // ==========================================================================

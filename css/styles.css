@@ -178,24 +178,6 @@ body {
     }
 }
 
-/* Responsive Section Heights */
-.section-responsive {
-    padding-top: var(--section-padding-y);
-    padding-bottom: var(--section-padding-y);
-}
-
-.spacing-responsive {
-    margin-bottom: var(--section-spacing);
-}
-
-.header-spacing-responsive {
-    margin-bottom: var(--header-spacing);
-}
-
-.scroll-offset-responsive {
-    scroll-margin-top: var(--scroll-offset);
-}
-
 /* Custom Scrollbar (Webkit) */
 ::-webkit-scrollbar {
     width: 10px;
@@ -519,18 +501,6 @@ textarea:focus {
 }
 
 /* Form Validation */
-/* Skeleton Loading for Images */
-img[loading="lazy"]:not([src*=".svg"]) {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: skeleton-loading 3s infinite;
-    animation-play-state: paused;
-}
-
-img[loading="lazy"].skeleton-active:not([src*=".svg"]) {
-    animation-play-state: running;
-}
-
 /* Ensure all badges have transparent background and no effects */
 img[src*="Badge"] {
     background: transparent !important;
@@ -546,28 +516,6 @@ img[src*="MVP_Badge"] {
     filter: none !important;
     transform: none !important;
     transition: none !important;
-}
-
-/* Badge alignment and spacing in About section */
-.badge-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    align-items: center;
-    justify-items: center;
-    width: 100%;
-    max-width: 24rem;
-    /* max-w-md equivalent */
-    margin: 0 auto;
-}
-
-.badge-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 6rem;
-    /* h-24 equivalent for consistent spacing */
 }
 
 input:valid:not(:placeholder-shown),
@@ -616,22 +564,6 @@ html.dark *:focus-visible {
     box-shadow: 0 0 0 2px #1FBFFF, 0 0 0 4px #111827;
     /* CSS variable version */
     box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px var(--color-bg-dark);
-}
-
-/* Skip to Main Content Link */
-.skip-to-main {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background-color: var(--color-primary);
-    color: white;
-    padding: 0.5rem 1rem;
-    z-index: 50;
-    transition: top 0.3s;
-}
-
-.skip-to-main:focus {
-    top: 0;
 }
 
 /* Reduced Motion */
