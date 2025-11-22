@@ -17,6 +17,26 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile touch optimization */
+@media (hover: none) and (pointer: coarse) {
+    /* This targets touch devices like mobile */
+    * {
+        -webkit-tap-highlight-color: rgba(0, 167, 228, 0.1);
+    }
+    
+    /* Disable hover effects on touch devices */
+    .pillar-card:hover,
+    .presentation-card:hover,
+    .blog-post-card:hover {
+        transform: none !important;
+    }
+    
+    /* Touch-friendly click targets */
+    button, a, input, textarea {
+        min-height: 44px;
+    }
+}
+
 /* Ensure backdrop-filter works with fallbacks */
 @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
     .backdrop-blur {
@@ -110,6 +130,23 @@ html.dark {
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+}
+
+body {
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Optimize rendering on mobile */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for mobile viewport height */
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari specific */
+    .min-h-screen {
+        min-height: -webkit-fill-available;
+    }
 }
 
 /* Viewport-Aware Section Spacing */
@@ -201,6 +238,9 @@ html.dark ::-webkit-scrollbar-thumb {
     will-change: transform;
     /* Fallback for Brave */
     transform: scale(1);
+    /* Optimize for mobile */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 @keyframes hero-zoom {
@@ -219,6 +259,9 @@ html.dark ::-webkit-scrollbar-thumb {
     /* Gradient for Chrome */
     background-image: linear-gradient(to bottom right, rgba(17, 24, 39, 0.4), rgba(37, 99, 235, 0.4), rgba(31, 41, 55, 0.4));
     background-size: 100% 100%;
+    /* Optimize rendering on mobile */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* Animated Grid Effect - Removed for performance */
@@ -629,16 +672,128 @@ html.dark *:focus-visible {
     }
 }
 
+/* Mobile Brave Browser Specific Fixes */
+@media (max-width: 768px) {
+    /* Disable complex effects on mobile for better performance */
+    @supports not (backdrop-filter: blur(12px)) {
+        .backdrop-blur-sm,
+        [class*="backdrop-blur"] {
+            background-color: rgba(59, 130, 246, 0.25) !important;
+        }
+    }
+    
+    /* Force hardware acceleration on mobile */
+    .hero-bg,
+    .hero-overlay,
+    .hero-content {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        will-change: auto;
+    }
+    
+    /* Prevent webkit blur issues on mobile */
+    img, picture {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+}
+
 /* ==========================================================================
    Responsive Adjustments
    ========================================================================== */
 
-/* Mobile: Reduce hero text glow */
+/* Mobile: Reduce hero text glow and fix rendering issues */
 @media (max-width: 640px) {
     .hero-glow {
         text-shadow:
             0 0 5px rgba(0, 167, 228, 0.2),
             0 0 10px rgba(0, 167, 228, 0.1);
+    }
+    
+    /* Mobile-specific fixes for Brave */
+    .hero-bg {
+        /* Disable animation on mobile for better performance */
+        animation: none !important;
+        transform: scale(1) !important;
+    }
+    
+    .hero-overlay {
+        /* Stronger overlay for better text readability on mobile */
+        background-color: rgba(17, 24, 39, 0.6) !important;
+        background-image: linear-gradient(to bottom right, rgba(17, 24, 39, 0.5), rgba(37, 99, 235, 0.5), rgba(31, 41, 55, 0.5)) !important;
+    }
+    
+    .hero-grid {
+        /* Disable grid on mobile */
+        background-image: none !important;
+        opacity: 0 !important;
+    }
+    
+    .hero-title {
+        /* Simplified text shadow for mobile */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.3) !important;
+        animation: none !important;
+    }
+    
+    .hero-subtitle {
+        /* Ensure visibility on mobile */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    .animate-pulse-slow {
+        /* Disable pulse animation on mobile */
+        animation: none !important;
+        opacity: 1 !important;
+    }
+    
+    /* Fix backdrop-blur on mobile Brave */
+    .backdrop-blur-sm,
+    [class*="backdrop-blur"] {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background-color: rgba(59, 130, 246, 0.2) !important;
+    }
+    
+    /* Ensure CTA buttons are fully visible */
+    .cta-button-primary,
+    .cta-button-secondary {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    /* Header adjustments for mobile */
+    #header {
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+    
+    html.dark #header {
+        background: rgba(17, 24, 39, 0.98) !important;
+    }
+}
+
+/* Mobile landscape specific */
+@media (max-width: 896px) and (orientation: landscape) {
+    .hero-bg {
+        object-position: center center !important;
+    }
+    
+    .hero-overlay {
+        background-color: rgba(17, 24, 39, 0.7) !important;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.875rem !important; /* text-3xl */
+        line-height: 2.25rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important; /* text-base */
     }
 }
 
