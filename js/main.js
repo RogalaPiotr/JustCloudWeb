@@ -223,6 +223,16 @@
                 return;
             }
 
+            // Update consent mode (important for returning users)
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+            }
+
             // Load Google Analytics script
             const script1 = document.createElement('script');
             script1.async = true;
@@ -267,6 +277,17 @@
         acceptAnalytics() {
             this.saveConsent(true);
             this.hideBanner();
+
+            // Update consent mode
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+            }
+
             this.initGoogleAnalytics();
             console.log('✅ Cookies accepted: Analytics enabled');
         },
