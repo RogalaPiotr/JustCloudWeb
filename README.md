@@ -1,4 +1,9 @@
-# JustCloud.pl Website
+# JustCloud.pl | Website
+
+**Microsoft Azure Expert | Cloud Computing Specialist**
+
+[![Website](https://img.shields.io/badge/Website-web.justcloud.pl-0078D4?style=for-the-badge&logo=microsoftazure)](https://web.justcloud.pl)
+[![Blog](https://img.shields.io/badge/Blog-blog.justcloud.pl-47b5ed?style=for-the-badge&logo=rss)](https://blog.justcloud.pl)
 
 ## 🇵🇱 Polski
 
