@@ -22,4 +22,3 @@
 
 ## Autor | Author
 Piotr Rogala
-
