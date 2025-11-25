@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Wideo i Prezentacje - JustCloud.pl</title>
+    <meta name="title" content="Wideo i Prezentacje - JustCloud.pl">
+    <meta name="description" content="Kolekcja moich wystąpień, prezentacji i nagrań wideo na temat Microsoft Azure, DevOps i chmury obliczeniowej.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://justcloud.pl/videos.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'jc-blue': {
+                            DEFAULT: '#00A7E4',
+                            50: '#E6F7FD',
+                            100: '#B8EBFA',
+                            200: '#8ADFF7',
+                            300: '#5CD3F4',
+                            400: '#2EC7F1',
+                            500: '#00A7E4',
+                            600: '#0090C7',
+                            700: '#007AAA',
+                            800: '#00648D',
+                            900: '#004E70',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-inter antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="JustCloud.pl Logo" class="h-12 w-auto" loading="eager">
+                    <span class="font-space-mono font-bold text-xl sm:text-2xl text-jc-blue-600 dark:text-jc-blue-300">JustCloud.pl</span>
+                </a>
+                
+                <!-- Dark Mode Toggle & Back Button -->
+                <div class="flex items-center gap-4">
+                    <!-- Desktop Dark Mode Toggle (hidden on mobile) -->
+                    <button id="theme-toggle-desktop" type="button" class="hidden md:block p-2 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" aria-label="Toggle dark mode">
+                        <svg class="theme-toggle-dark-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg class="theme-toggle-light-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-jc-blue-600 dark:hover:text-jc-blue-300 transition-colors">
+                        ← Powrót na stronę główną
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <!-- Page Title -->
+            <div class="text-center mb-16">
+                <h1 class="font-space-mono text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Wideo i Prezentacje
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Zbiór moich wystąpień z konferencji, meetupów oraz nagrań edukacyjnych.
+                </p>
+            </div>
+
+            <!-- Videos organized by year (newest first) -->
+            <div class="space-y-16">
+                
+                <!-- 2025 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2025</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Optymalizacja projektów w Azure: Zrozumienie klienta, wpływ Tech Lead'a i użycie Terraform -->
+                        <a href="https://youtu.be/Ea0qZBTT1WU" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/Ea0qZBTT1WU/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Optymalizacja projektów w Azure: Zrozumienie klienta, wpływ Tech Lead'a i użycie Terraform
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Optymalizacja projektów w Azure - Piotr Rogala -->
+                        <a href="https://youtu.be/c1c59DBL47s" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/c1c59DBL47s/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    JSON and Azure - Code Europe Autumn 2017
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2024</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- 4Developers Wrocław 2024: Produkcyjna Landing Zona w dwa tygodnie? -->
+                        <a href="https://youtu.be/Odf_MwVY0JA" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/Odf_MwVY0JA/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Optymalizacja projektów w Azure - Piotr Rogala
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Infrastructure as Code best practices in the Cloud -->
+                        <a href="https://youtu.be/hxiMTEjrz8c" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/hxiMTEjrz8c/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Z Azure DevOps do GitHub Actions z użyciem ChatGPT
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2023</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Z Azure DevOps do GitHub Actions z użyciem ChatGPT -->
+                        <a href="https://youtu.be/YQ5l86kQMbA" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/YQ5l86kQMbA/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Infrastructure as Code best practices in the Cloud
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                        
+
+                        <!-- Infrastructure as Code best practices in the Cloud | CE 2023 -->
+                        <a href="https://youtu.be/dpgtwEj0TBs" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img 
+                                    src="https://img.youtube.com/vi/dpgtwEj0TBs/maxresdefault.jpg" 
+                                    alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Infrastructure as Code best practices in the Cloud | CE 2023
+                                </h3>
+                                <div class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- [#399] Azure lessons learned -->
+                        <a href="https://youtu.be/6ec38vH6mWc" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/6ec38vH6mWc/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Azure lessons learned
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2022</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Azure lessons learned -->
+                        <a href="https://youtu.be/euUmdqb7td8" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/euUmdqb7td8/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    [#399] Azure lessons learned
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Dla kogo jest Azure China? -->
+                        <a href="https://youtu.be/MbS02Ii5-Dw" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img 
+                                    src="https://img.youtube.com/vi/MbS02Ii5-Dw/maxresdefault.jpg" 
+                                    alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Dla kogo jest Azure China?
+                                </h3>
+                                <div class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Jak wdrożyć Azure Pipelines agenta? How to deploy Azure Pipelines agent? -->
+                        <a href="https://youtu.be/bjtgALglU2o" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img 
+                                    src="https://img.youtube.com/vi/bjtgALglU2o/maxresdefault.jpg" 
+                                    alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Jak wdrożyć Azure Pipelines agenta? How to deploy Azure Pipelines agent?
+                                </h3>
+                                <div class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2021</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Infrastruktura jako kod (IaC) zasady, wzorce i praktyki -->
+                        <a href="https://youtu.be/hIP62YRtGoI" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img 
+                                    src="https://img.youtube.com/vi/hIP62YRtGoI/maxresdefault.jpg" 
+                                    alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Infrastruktura jako kod (IaC) zasady, wzorce i praktyki
+                                </h3>
+                                <div class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2020</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Azuronet - Azure Podcast #1: O DevOps z Piotrem Rogalą -->
+                        <a href="https://youtu.be/8eK7f93lWgA" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/8eK7f93lWgA/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Produkcyjna Landing Zona w dwa tygodnie? - 4Developers Wrocław 2024
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2019</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- [#132] Azure DevOps, VSTS, JSON, PowerShell, Automatyzacja -->
+                        <a href="https://youtu.be/Xmcx6qBaPyU" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img 
+                                    src="https://img.youtube.com/vi/Xmcx6qBaPyU/maxresdefault.jpg" 
+                                    alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    [#132] Azure DevOps, VSTS, JSON, PowerShell, Automatyzacja
+                                </h3>
+                                <div class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- 2017 -->
+                <div class="year-section">
+                    <div class="flex items-center mb-8">
+                        <h2 class="text-3xl sm:text-4xl font-space-mono font-bold text-jc-blue-600 dark:text-jc-blue-400 pr-6">2017</h2>
+                        <div class="flex-1 h-px bg-gradient-to-r from-jc-blue-600 to-transparent dark:from-jc-blue-400"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- JSON and Azure - Code Europe Autumn 2017 -->
+                        <a href="https://youtu.be/JKhwEJJ6_QM" target="_blank" rel="noopener noreferrer"
+                            class="presentation-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col">
+                            <div class="relative w-full pt-[56.25%] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                <img src="https://img.youtube.com/vi/JKhwEJJ6_QM/maxresdefault.jpg" alt="Prezentacja YouTube"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                                    <div
+                                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-jc-blue-600 dark:group-hover:text-jc-blue-400 transition-colors">
+                                    Azuronet - Azure Podcast #1: O DevOps z Piotrem Rogalą
+                                </h3>
+                                <div
+                                    class="mt-auto inline-flex items-center text-jc-blue-600 dark:text-jc-blue-400 group-hover:text-jc-blue-700 dark:group-hover:text-jc-blue-300 font-semibold transition-colors">
+                                    Zobacz na YouTube
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Copyright -->
+            <div class="text-center text-sm text-gray-500 dark:text-gray-500">
+                <p>&copy; 2025 JustCloud.pl. Wszystkie prawa zastrzeżone.</p>
+                <p class="mt-2">
+                    <a href="privacy-policy.html" class="text-jc-blue-400 dark:text-jc-blue-300 hover:underline">Polityka prywatności i cookies</a>
+                    <span class="mx-2">|</span>
+                    <button id="cookie-settings-footer" class="text-jc-blue-400 dark:text-jc-blue-300 hover:underline cursor-pointer">Ustawienia cookies</button>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <!-- Dark Mode Script -->
+    <script>
+        (function() {
+            const themeToggleBtnDesktop = document.getElementById('theme-toggle-desktop');
+            const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+            const darkIcons = document.querySelectorAll('.theme-toggle-dark-icon');
+            const lightIcons = document.querySelectorAll('.theme-toggle-light-icon');
+            const html = document.documentElement;
+
+            // Check for saved theme preference or default to system preference
+            const getThemePreference = () => {
+                if (localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            // Set theme
+            const setTheme = (theme) => {
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    darkIcons.forEach(icon => icon?.classList.remove('hidden'));
+                    lightIcons.forEach(icon => icon?.classList.add('hidden'));
+                } else {
+                    html.classList.remove('dark');
+                    darkIcons.forEach(icon => icon?.classList.add('hidden'));
+                    lightIcons.forEach(icon => icon?.classList.remove('hidden'));
+                }
+                localStorage.setItem('theme', theme);
+            };
+
+            // Initialize theme
+            setTheme(getThemePreference());
+
+            // Toggle theme function
+            const toggleTheme = () => {
+                const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            };
+
+            // Add event listeners to both buttons
+            themeToggleBtnDesktop?.addEventListener('click', toggleTheme);
+            themeToggleBtnMobile?.addEventListener('click', toggleTheme);
+        })();
+    </script>
+</body>
+</html>

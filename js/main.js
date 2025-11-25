@@ -818,41 +818,6 @@
     // Console Welcome Message
     // ==========================================================================
     // ==========================================================================
-    // YouTube Video Titles Loader
-    // ==========================================================================
-
-    async function loadYouTubeTitles() {
-        const videoElements = document.querySelectorAll('[data-video-id]');
-        
-        for (const element of videoElements) {
-            const videoId = element.getAttribute('data-video-id');
-            if (!videoId) continue;
-            
-            try {
-                // Use oEmbed API to get video title - no API key needed
-                const response = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`);
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    element.textContent = data.title || 'Prezentacja';
-                } else {
-                    element.textContent = 'Prezentacja';
-                }
-            } catch (error) {
-                console.warn(`Nie udało się załadować tytułu dla wideo ${videoId}:`, error);
-                element.textContent = 'Prezentacja';
-            }
-        }
-    }
-
-    // Load YouTube titles when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadYouTubeTitles);
-    } else {
-        loadYouTubeTitles();
-    }
-
-    // ==========================================================================
     // Console Welcome Message
     // ==========================================================================
 
