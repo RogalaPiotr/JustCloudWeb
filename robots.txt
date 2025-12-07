@@ -1,5 +1,5 @@
 # JustCloud.pl - Robots.txt
-# https://justcloud.pl/robots.txt
+# https://web.justcloud.pl/robots.txt
 
 # Default rules for all crawlers
 User-agent: *
@@ -7,7 +7,7 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemaps (for all search engines)
-Sitemap: https://justcloud.pl/sitemap.xml
+Sitemap: https://web.justcloud.pl/sitemap.xml
 
 # Disallow search results and filter pages
 Disallow: /search
