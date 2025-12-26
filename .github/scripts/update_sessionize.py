@@ -7,6 +7,8 @@ import sys
 # Configuration
 URL = "https://sessionize.com/piotr-rogala/"
 FILE_PATH = "brand.html"
+GITHUB_REPO = os.getenv('GITHUB_REPOSITORY', 'piotr-rogala/justcloudweb')
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN', '')
 
 def get_sessionize_data():
     print(f"Fetching profile from {URL}...")
@@ -129,13 +131,36 @@ def get_sessionize_data():
 
     return data
 
-def update_file(data):
-    if not os.path.exists(FILE_PATH):
-        print(f"Error: File {FILE_PATH} not found.")
+def get_gh_pages_file():
+    """Fetch brand.html from gh-pages branch"""
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}?ref=gh-pages"
+    headers = {}
+    if GITHUB_TOKEN:
+        headers['Authorization'] = f"token {GITHUB_TOKEN}"
+    
+    response = requests.get(api_url, headers=headers)
+    if response.status_code != 200:
+        print(f"Error: Could not fetch {FILE_PATH} from gh-pages branch (Status: {response.status_code})")
         sys.exit(1)
+    
+    import base64
+    content = base64.b64decode(response.json()['content']).decode('utf-8')
+    return content, response.json()['sha']
 
-    with open(FILE_PATH, 'r', encoding='utf-8') as f:
-        content = f.read()
+def update_file(data):
+    # Get file from gh-pages branch
+    try:
+        content, file_sha = get_gh_pages_file()
+    except Exception as e:
+        print(f"Error fetching file from gh-pages: {e}")
+        # Fallback to local file if it exists
+        if os.path.exists(FILE_PATH):
+            with open(FILE_PATH, 'r', encoding='utf-8') as f:
+                content = f.read()
+            file_sha = None
+        else:
+            print(f"Error: File {FILE_PATH} not found and could not fetch from gh-pages.")
+            sys.exit(1)
 
     # Construct the new JS object string
     new_obj_str = "{\n"
@@ -192,9 +217,32 @@ def update_file(data):
         
         # Only write if content changed
         if new_content != content:
-            with open(FILE_PATH, 'w', encoding='utf-8') as f:
-                f.write(new_content)
-            print("Successfully updated brand.html")
+            # If we have a file_sha, update via GitHub API (gh-pages branch)
+            if file_sha:
+                import base64
+                encoded_content = base64.b64encode(new_content.encode()).decode()
+                api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}"
+                headers = {
+                    'Authorization': f"token {GITHUB_TOKEN}",
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+                data_payload = {
+                    'message': 'chore: update sessionize profile',
+                    'content': encoded_content,
+                    'sha': file_sha,
+                    'branch': 'gh-pages'
+                }
+                response = requests.put(api_url, json=data_payload, headers=headers)
+                if response.status_code in [200, 201]:
+                    print("Successfully updated brand.html on gh-pages branch")
+                else:
+                    print(f"Error updating file via GitHub API (Status: {response.status_code})")
+                    sys.exit(1)
+            else:
+                # Fallback to local file write
+                with open(FILE_PATH, 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+                print("Successfully updated brand.html")
         else:
             print("No changes detected.")
     else:
