@@ -12,8 +12,12 @@ GITHUB_TOKEN = os.getenv('GITHUB_TOKEN', '')
 
 def get_sessionize_data():
     print(f"Fetching profile from {URL}...")
-    response = requests.get(URL)
-    response.raise_for_status()
+    try:
+        response = requests.get(URL)
+        response.raise_for_status()
+    except requests.exceptions.RequestException:
+        print("Error: Failed to fetch sessionize profile")
+        sys.exit(1)
     soup = BeautifulSoup(response.text, 'html.parser')
 
     data = {}
@@ -149,10 +153,21 @@ def get_gh_pages_file():
 
 def update_file(data):
     # Get file from gh-pages branch
+    file_sha = None
     try:
-        content, file_sha = get_gh_pages_file()
+        if GITHUB_TOKEN:
+            content, file_sha = get_gh_pages_file()
+        else:
+            # If no token, try local fallback
+            print("Note: GITHUB_TOKEN not set, looking for local brand.html")
+            if os.path.exists(FILE_PATH):
+                with open(FILE_PATH, 'r', encoding='utf-8') as f:
+                    content = f.read()
+            else:
+                print(f"Error: File {FILE_PATH} not found. Make sure you're in the gh-pages branch directory.")
+                sys.exit(1)
     except Exception as e:
-        print(f"Error fetching file from gh-pages: {e}")
+        print("Error: Failed to fetch or process file")
         # Fallback to local file if it exists
         if os.path.exists(FILE_PATH):
             with open(FILE_PATH, 'r', encoding='utf-8') as f:
@@ -254,5 +269,6 @@ if __name__ == "__main__":
         data = get_sessionize_data()
         update_file(data)
     except Exception as e:
-        print(f"Error: {e}")
+        # Don't print the exception as it might contain sensitive info
+        print("Error: Script execution failed")
         sys.exit(1)
