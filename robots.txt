@@ -6,6 +6,9 @@ User-agent: *
 Allow: /
 Crawl-delay: 1
 
+# Do not index brand page
+Disallow: /brand.html
+
 # Sitemaps (for all search engines)
 Sitemap: https://web.justcloud.pl/sitemap.xml
 
