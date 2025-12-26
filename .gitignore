@@ -20,7 +20,6 @@ npm-debug.log
 yarn-error.log
 
 # tmp
-brand.html
-workshops.html
+warsztaty.html
 data/**
 backups/**
