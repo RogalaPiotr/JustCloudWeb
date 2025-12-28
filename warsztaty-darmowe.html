@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<!-- Head: Meta, SEO, Tailwind, styles -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Warsztaty Azure, Terraform & DevOps (Enterprise Standards) | JustCloud.pl</title>
+    <meta name="title" content="Warsztaty Azure, Terraform & DevOps (Enterprise Standards) | JustCloud.pl">
+
+    <meta name="description"
+        content="Darmowe warsztaty dla inżynierów. Uczymy się Terraform, Azure i DevOps w standardzie Enterprise. Minimum teorii – maksimum praktyki, live coding i scenariusze produkcyjne. Prowadzi Piotr Rogala (Microsoft MVP).">
+
+    <meta name="author" content="Piotr Rogala - JustCloud.pl">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://web.justcloud.pl/warsztaty-darmowe.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://web.justcloud.pl/warsztaty-darmowe.html">
+    <meta property="og:title" content="Warsztaty Azure & Terraform: Zbuduj kompetencje Enterprise">
+    <meta property="og:description"
+        content="Dołącz do cyklu spotkań dla inżynierów. Uczymy się architektury, bezpieczeństwa i IaC tak, jak robi się to w dużych projektach. Wstęp wolny.">
+    <meta property="og:image" content="https://web.justcloud.pl/img/justcloud-social-card.png">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="JustCloud.pl">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://web.justcloud.pl/warsztaty-darmowe.html">
+    <meta name="twitter:title" content="Warsztaty Azure & Terraform: Standardy Enterprise">
+    <meta name="twitter:description"
+        content="100% praktyki z Terraform i Azure. Dołącz do darmowych warsztatów prowadzonych przez Piotra Rogalę (MVP).">
+    <meta name="twitter:image" content="https://web.justcloud.pl/img/justcloud-social-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Warsztaty Azure i Terraform: Enterprise Standards",
+      "description": "Cykl praktycznych warsztatów online z zakresu Infrastructure as Code, Terraform i dobrych praktyk w chmurze Microsoft Azure.",
+      "provider": {
+        "@type": "Person",
+        "name": "Piotr Rogala",
+        "jobTitle": "Microsoft MVP, Principal Cloud Architect",
+        "url": "https://justcloud.pl"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "Polska"},
+        {"@type": "City", "name": "Warszawa"},
+        {"@type": "City", "name": "Kraków"},
+        {"@type": "City", "name": "Łódź"},
+        {"@type": "City", "name": "Wrocław"},
+        {"@type": "City", "name": "Poznań"},
+        {"@type": "City", "name": "Gdańsk"},
+        {"@type": "City", "name": "Szczecin"},
+        {"@type": "City", "name": "Bydgoszcz"},
+        {"@type": "City", "name": "Lublin"},
+        {"@type": "City", "name": "Białystok"},
+        {"@type": "City", "name": "Katowice"},
+        {"@type": "City", "name": "Gdynia"},
+        {"@type": "City", "name": "Częstochowa"},
+        {"@type": "City", "name": "Radom"},
+        {"@type": "City", "name": "Toruń"},
+        {"@type": "City", "name": "Sosnowiec"},
+        {"@type": "City", "name": "Rzeszów"},
+        {"@type": "City", "name": "Kielce"},
+        {"@type": "City", "name": "Gliwice"},
+        {"@type": "City", "name": "Olsztyn"},
+        {"@type": "City", "name": "Bielsko-Biała"},
+        {"@type": "City", "name": "Zielona Góra"},
+        {"@type": "City", "name": "Opole"}
+      ],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT3H",
+        "instructor": {
+            "@type": "Person",
+            "name": "Piotr Rogala"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Free",
+        "price": "0",
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/InStock"
+      },
+      "isAccessibleForFree": true,
+      "inLanguage": "pl-PL"
+    }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'jc-blue': {
+                            DEFAULT: '#00A7E4',
+                            50: '#E6F7FD',
+                            100: '#B8EBFA',
+                            200: '#8ADFF7',
+                            300: '#5CD3F4',
+                            400: '#2EC7F1',
+                            500: '#00A7E4',
+                            600: '#0090C7',
+                            700: '#007AAA',
+                            800: '#00648D',
+                            900: '#004E70',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body
+    class="font-inter antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header: Navbar + Theme toggle -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="JustCloud.pl Logo" class="h-12 w-auto" loading="eager">
+                    <span
+                        class="font-space-mono font-bold text-xl sm:text-2xl text-jc-blue-600 dark:text-jc-blue-300">JustCloud.pl</span>
+                </a>
+
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle-desktop" type="button"
+                        class="hidden md:block p-2 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        aria-label="Toggle dark mode">
+                        <svg class="theme-toggle-dark-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg class="theme-toggle-light-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <a href="index.html"
+                        class="px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-jc-blue-600 dark:hover:text-jc-blue-300 transition-colors">
+                        ← Powrót na stronę główną
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
+            <!-- Hero: Title, intro, and CTA -->
+            <div class="text-center mb-20">
+                <div class="flex flex-wrap justify-center gap-3 mb-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-jc-blue-50 dark:bg-jc-blue-900/30 border border-jc-blue-200 dark:border-jc-blue-800 text-jc-blue-700 dark:text-jc-blue-300 text-sm font-bold uppercase tracking-wider shadow-sm">
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </span>
+                        Edycja Q1 2026 (Styczeń – Marzec)
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-sm font-bold uppercase tracking-wider shadow-sm">
+                        Bezpłatne
+                    </div>
+                </div>
+                <h1
+                    class="font-space-mono text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Warsztaty Azure & DevOps:<br class="hidden lg:block" />
+                    Zbuduj kompetencje <span class="text-jc-blue-600 dark:text-jc-blue-400">Enterprise</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Dołącz do cyklu darmowych spotkań online dla inżynierów, którzy chcą wejść na wyższy poziom.
+                    <strong>Terraform, automatyzacja, budowanie środowisk i best practices.</strong>
+                    Zastępujemy teorię i ręczną konfigurację w portalu standardami, które obowiązują w dużych
+                    projektach komercyjnych.
+                </p>
+
+                <div class="mt-8 flex justify-center">
+                    <a href="#styczen"
+                        class="text-sm font-semibold text-jc-blue-600 dark:text-jc-blue-400 hover:text-jc-blue-800 dark:hover:text-jc-blue-200 flex items-center gap-2 transition-colors">
+                        Zobacz najbliższy warsztat
+                        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Feature Grid: Key highlights -->
+            <section class="mb-24">
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center">
+                        <div
+                            class="w-16 h-16 bg-jc-blue-100 dark:bg-jc-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-jc-blue-600 dark:text-jc-blue-400" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Automatyzacja zamiast klikania</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Poznasz procesy działające na produkcji oraz nawyki, które są cenione w profesjonalnych zespołach.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center">
+                        <div
+                            class="w-16 h-16 bg-jc-blue-100 dark:bg-jc-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-jc-blue-600 dark:text-jc-blue-400" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Czas i forma</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Warsztaty trwają 2–3 godziny i odbywają się online. Udział jest darmowy bez limitu miejsc.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center">
+                        <div
+                            class="w-16 h-16 bg-jc-blue-100 dark:bg-jc-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-jc-blue-600 dark:text-jc-blue-400" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Gotowy kod</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Dostajesz dostęp do repozytorium z gotowymi szablonami (boilerplate), które możesz
+                            wykorzystać w swoim pierwszym projekcie.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center">
+                        <div
+                            class="w-16 h-16 bg-jc-blue-100 dark:bg-jc-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-jc-blue-600 dark:text-jc-blue-400" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8h2a2 2 0 012 2v9l-4-4H7a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Wsparcie Mentora</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Podczas warsztatów zadajesz pytania na żywo. Poza sesją masz wsparcie moje i społeczności na
+                            Discordzie.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workshops: January details + Upcoming months -->
+            <section class="mb-24 space-y-12">
+
+                <!-- January Workshop -->
+                <div id="styczen" class="scroll-mt-24">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-jc-blue-500 to-cyan-500 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                        </div>
+
+                        <div
+                            class="relative bg-white dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-700 rounded-[1.75rem] p-6 sm:p-10">
+
+                            <div
+                                class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-10 border-b border-gray-100 dark:border-gray-800 pb-8">
+                                <div class="space-y-4">
+                                    <div class="flex flex-wrap items-center gap-y-3 gap-x-6 mb-2">
+                                        <!-- Meta Group -->
+                                        <div class="flex items-center gap-3">
+                                            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-jc-blue-100 text-jc-blue-700 dark:bg-jc-blue-900/50 dark:text-jc-blue-300">
+                                                Edycja Q1 2026
+                                            </span>
+                                            <span class="text-sm font-mono font-bold text-gray-400 dark:text-gray-500 tracking-widest">STYCZEŃ</span>
+                                        </div>
+
+                                        <!-- Date Group -->
+                                        <div class="flex items-center gap-3 pl-6 border-l-2 border-gray-100 dark:border-gray-800">
+                                            <div class="flex items-center gap-2 text-gray-900 dark:text-white">
+                                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M3 13h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span class="font-bold text-base">27.01.2026</span>
+                                                <span class="text-sm text-gray-500 dark:text-gray-400">(Wtorek)</span>
+                                            </div>
+                                            
+                                            <a href="files/warsztat-terraform-styczen-2026.ics" download class="group flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide text-jc-blue-600 hover:bg-jc-blue-50 dark:text-jc-blue-400 dark:hover:bg-jc-blue-900/30 transition-all">
+                                                <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                                Dodaj do kalendarza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h3
+                                        class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+                                        Terraform: <span
+                                            class="text-transparent bg-clip-text bg-gradient-to-r from-jc-blue-600 to-cyan-500">Fundamenty
+                                            Enterprise</span>
+                                    </h3>
+                                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
+                                        To nie są podstawy typu "Hello World". To praktyczne zastosowanie Terraforma w
+                                        projektach, gdzie stabilność i bezpieczeństwo są kluczowe. Nauczysz się architektury,
+                                        bezpieczeństwa i pracy zespołowej.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col items-start lg:items-end gap-3 min-w-max">
+                                    <div
+                                        class="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700">
+                                        <div class="flex -space-x-2">
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white dark:border-gray-800">
+                                            </div>
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800">
+                                            </div>
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-gray-500 border-2 border-white dark:border-gray-800 flex items-center justify-center text-[8px] text-white font-bold">
+                                                +70</div>
+                                        </div>
+                                        <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Już
+                                            zapisanych</span>
+                                    </div>
+                                    <span
+                                        class="text-emerald-600 dark:text-emerald-400 text-sm font-bold flex items-center gap-1">
+                                        <span class="relative flex h-2.5 w-2.5 mr-1">
+                                            <span
+                                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                            <span
+                                                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                                        </span>
+                                        Wstęp Wolny
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                                <div
+                                    class="p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors group/item">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="p-3 rounded-xl bg-white dark:bg-gray-800 shadow-sm text-jc-blue-600 dark:text-jc-blue-400 group-hover/item:scale-110 transition-transform">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">Struktura Projektu
+                                                (Scaffolding)</h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-snug">
+                                                Dlaczego jeden plik `main.tf` to pułapka? Poznasz podział na <code
+                                                    class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">modules</code>,
+                                                <code
+                                                    class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">envs</code>
+                                                i <code
+                                                    class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">backend</code>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors group/item">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="p-3 rounded-xl bg-white dark:bg-gray-800 shadow-sm text-jc-blue-600 dark:text-jc-blue-400 group-hover/item:scale-110 transition-transform">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">Lokalny Workflow
+                                                (Inner Loop)</h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-snug">
+                                                Jak pracować szybko i pewnie przed pushem? <code
+                                                    class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">validate</code>,
+                                                <code
+                                                    class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">fmt</code>
+                                                i testowanie zmian.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors group/item">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="p-3 rounded-xl bg-white dark:bg-gray-800 shadow-sm text-jc-blue-600 dark:text-jc-blue-400 group-hover/item:scale-110 transition-transform">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">Security & Secrets
+                                            </h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-snug">
+                                                Jak nie wyciec haseł na GitHub? Praca z <code
+                                                    class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">tfvars</code>,
+                                                Key Vault i bezpieczne zarządzanie stanem (tfstate).
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors group/item">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="p-3 rounded-xl bg-white dark:bg-gray-800 shadow-sm text-jc-blue-600 dark:text-jc-blue-400 group-hover/item:scale-110 transition-transform">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">Q&A i Code Review
+                                            </h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-snug">
+                                                Analiza realnych przypadków i odpowiedzi na Twoje pytania dotyczące
+                                                problemów z produkcji.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-gray-100 dark:border-gray-800">
+                                <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-5 h-5 text-jc-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        Nagranie
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-5 h-5 text-jc-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                        </svg>
+                                        Repozytorium
+                                    </div>
+                                </div>
+                                <a href="https://sendfox.com/justcloud"
+                                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 font-bold rounded-xl transition-all hover:shadow-lg hover:scale-[1.02]">
+                                    Zapisz się na warsztat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Workshops: Luty & Marzec -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                    <div id="luty" class="scroll-mt-24 relative group rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-sm font-mono text-gray-400 dark:text-gray-500">LUTY 2026</span>
+                            <span
+                                class="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 text-xs font-bold rounded-full">PLANOWANIE</span>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                            Bicep: Fundamenty Enterprise
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                            Infrastruktura jako kod z natywnym wsparciem Microsoftu. Poznasz najlepsze praktyki
+                            organizacji kodu, zarządzania stanem i bezpieczeństwa w dużych zespołach.
+                        </p>
+                        <div
+                            class="border-t border-gray-100 dark:border-gray-700 pt-4 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Szczegóły
+                                wkrótce</span>
+                            <svg class="w-5 h-5 text-gray-300 group-hover:text-indigo-500 transition-colors transform group-hover:translate-x-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div id="marzec" class="scroll-mt-24 relative group rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:border-purple-400 dark:hover:border-purple-500 transition-colors">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-sm font-mono text-gray-400 dark:text-gray-500">MARZEC 2026</span>
+                            <span
+                                class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-xs font-bold rounded-full">PLANOWANIE</span>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                            DevOps & CI/CD
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                            Automatyzacja tego co nauczyliśmy się w pierwszych dwóch warsztatach. Budowa pipeline'ów, która pomoże zacząć wdrażanie kodu i automatyzować procesy.
+                        </p>
+                        <div
+                            class="border-t border-gray-100 dark:border-gray-700 pt-4 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Szczegóły
+                                wkrótce</span>
+                            <svg class="w-5 h-5 text-gray-300 group-hover:text-purple-500 transition-colors transform group-hover:translate-x-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- About the Instructor -->
+            <div id="prowadzacy" class="mb-24 scroll-mt-24">
+                <div class="relative rounded-[2.5rem] overflow-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-2xl border border-gray-100 dark:border-gray-800">
+                    <div
+                        class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-jc-blue-600 rounded-full blur-3xl opacity-10 dark:opacity-20">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-10 dark:opacity-20">
+                    </div>
+
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div class="lg:col-span-4 relative min-h-[400px] lg:min-h-full">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent dark:from-gray-900 z-10 lg:bg-gradient-to-r">
+                            </div>
+                            <img src="img/photo-me900x1350-900x1350.png" alt="Piotr Rogala"
+                                class="absolute inset-0 w-full h-full object-cover object-top">
+                        </div>
+
+                        <div class="lg:col-span-8 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-jc-blue-500/10 dark:bg-jc-blue-500/20 text-jc-blue-700 dark:text-jc-blue-300 text-xs font-bold uppercase tracking-wider border border-jc-blue-500/20 dark:border-jc-blue-500/30">
+                                    Instructor & Architect
+                                </span>
+                                <div class="flex gap-2">
+                                    <img src="img/MVP_Badge_Horizontal_Secondary_DarkBlue7694_RGB.png" alt="MVP"
+                                        class="h-6 opacity-80 grayscale hover:grayscale-0 transition-all">
+                                    <img src="img/Standard-MCT-Badge.svg" alt="MCT"
+                                        class="h-6 opacity-80 grayscale hover:grayscale-0 transition-all">
+                                </div>
+                            </div>
+
+                            <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Piotr Rogala</h2>
+                            <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 font-light">
+                                Principal Cloud Architect w Nordcloud. <br class="hidden sm:block">
+                                Buduję chmury dla największych, a po godzinach uczę jak to robić dobrze.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-jc-blue-600 dark:text-jc-blue-400">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Wiedza poparta praktyką</h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Kod, który pokazuję, działa na produkcji w
+                                            dużych organizacjach i środowiskach Enterprise.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-purple-600 dark:text-purple-400">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Same konkrety</h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Szanuję Twój czas. Skupiamy się na kodzie, demo i realnych scenariuszach.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://linkedin.com/in/rogalapiotr" target="_blank"
+                                    class="px-6 py-3 rounded-xl bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 font-bold dark:hover:bg-gray-100 transition-colors flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0h-.003z" />
+                                    </svg>
+                                    LinkedIn
+                                </a>
+                                <a href="https://github.com/RogalaPiotr" target="_blank"
+                                    class="px-6 py-3 rounded-xl bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-white font-bold dark:hover:bg-gray-700 transition-colors flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- Where to Find Events Section -->
+<section class="mb-24">
+    <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-[2rem] shadow-xl overflow-hidden">
+        <div class="bg-gradient-to-r from-emerald-50 via-white to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 px-8 py-10 border-b border-gray-100 dark:border-gray-700">
+            <div class="flex flex-col gap-3">
+                <span class="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Ekosystem
+                </span>
+                <h2 id="badz-na-biezaco" class="font-space-mono text-3xl md:text-4xl font-bold text-gray-900 dark:text-white scroll-mt-24">
+                    Bądź na bieżąco
+                </h2>
+            </div>
+        </div>
+
+        <div class="p-8 sm:p-10">
+            <p class="text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-3xl text-lg">
+                Aktualnie tworzę i ogłaszam nowe warsztaty na kilku platformach. Możesz śledzić mnie na poniższych
+                kanałach, aby być pierwszym, który dowiaduje się o nowych inicjatywach i zaproszeniach do społeczności.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+                <a href="https://crossweb.pl" target="_blank" rel="noopener noreferrer" aria-label="Odwiedź profil JustCloud na CrossWeb.pl" class="group flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-4 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M4 11h16M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1">CrossWeb.pl</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Warsztaty</p>
+                </a>
+
+                <a href="https://linkedin.com/in/piotrrogala" target="_blank" rel="noopener noreferrer" aria-label="Odwiedź profil Piotra Rogali na LinkedIn" class="group flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1">LinkedIn</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Mój profil</p>
+                </a>
+
+                <a href="https://twitter.com/RogalaPiotr" target="_blank" rel="noopener noreferrer" aria-label="Odwiedź profil Piotra Rogali na X (Twitter)" class="group flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-gray-800 dark:hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center mb-4 text-gray-900 dark:text-white group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1">X (Twitter)</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Moje posty</p>
+                </a>
+
+                <a href="https://blog.justcloud.pl" target="_blank" rel="noopener noreferrer" aria-label="Odwiedź blog JustCloud.pl" class="group flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-4 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1">Blog JustCloud</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Artykuły</p>
+                </a>
+
+                <a href="https://sendfox.com/justcloud" target="_blank" rel="noopener noreferrer" aria-label="Zapisz się na newsletter JustCloud" class="group flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-pink-400 dark:hover:border-pink-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1">Newsletter</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">Powiadomienia</p>
+                </a>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-100 dark:border-blue-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                <div class="flex-shrink-0 p-4 bg-white dark:bg-gray-800 rounded-full shadow-sm text-blue-600 dark:text-blue-400">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Chcesz pomóc w rozwoju?</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        Jeśli masz pomysły na dotarcie do szerszej liczby osób w Twojej firmie, społeczności branżowej lub na innych platformach, daj mi znać! Wsparcie i feedback jest dla mnie bardzo cenny.
+                    </p>
+                </div>
+                <a href="index.html#contact" class="flex-shrink-0 inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 transition-transform hover:scale-[1.02] active:scale-95">
+                    Skontaktuj się
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Discord Community Section -->
+<section class="mb-24">
+    <div
+        class="bg-gradient-to-r from-indigo-50 to-purple-100 dark:from-gray-800 dark:to-gray-900 border border-indigo-200 dark:border-indigo-800 rounded-3xl shadow-lg overflow-hidden">
+        <div class="px-6 sm:px-10 py-10 sm:py-14 flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div class="flex-1">
+                <div class="flex items-center gap-3 mb-4">
+                    <svg class="w-8 h-8 text-indigo-600 dark:text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.864-.607 1.25a18.27 18.27 0 0 0-5.487 0c-.163-.386-.395-.875-.607-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.294.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.294a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.076.076 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.057c.5-4.565-.838-8.628-3.549-12.193a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-.967-2.157-2.156 0-1.189.966-2.157 2.157-2.157 1.201 0 2.169.982 2.157 2.157 0 1.189-.966 2.156-2.157 2.156zm7.975 0c-1.183 0-2.157-.967-2.157-2.156 0-1.189.966-2.157 2.157-2.157 1.201 0 2.169.982 2.157 2.157 0 1.189-.956 2.156-2.157 2.156z" />
+                    </svg>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white scroll-mt-24">Prywatna grupa Discord dla
+                        uczestników</h3>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                    Uczestnicy po rejestracji na warsztaty otrzymają dodatkowo dostęp do <strong>prywatnej grupy na
+                        Discordzie</strong>, która umożliwia dyskusje związane z warsztatami i kontakt społeczności
+                    między sesjami.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300 mb-6">
+                    <li class="flex items-center gap-2"><span
+                            class="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span><span>Dostęp do kanałów
+                            tematycznych (Azure, DevOps, Terraform)</span></li>
+                    <li class="flex items-center gap-2"><span
+                            class="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span><span>Czat na żywo i
+                            wymiana doświadczeń z społecznością</span></li>
+                    <li class="flex items-center gap-2"><span
+                            class="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span><span>Dostęp do
+                            materiałów, skryptów i zasobów edukacyjnych</span></li>
+                </ul>
+
+            </div>
+            <div class="hidden lg:flex justify-center lg:w-1/3">
+                <svg class="w-32 h-32 text-indigo-500 dark:text-indigo-400 opacity-20" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.864-.607 1.25a18.27 18.27 0 0 0-5.487 0c-.163-.386-.395-.875-.607-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.294.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.294a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.076.076 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.057c.5-4.565-.838-8.628-3.549-12.193a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-.967-2.157-2.156 0-1.189.966-2.157 2.157-2.157 1.201 0 2.169.982 2.157 2.157 0 1.189-.966 2.156-2.157 2.156zm7.975 0c-1.183 0-2.157-.967-2.157-2.156 0-1.189.966-2.157 2.157-2.157 1.201 0 2.169.982 2.157 2.157 0 1.189-.956 2.156-2.157 2.156z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+            <!-- Support Options: Koszulka & Kawa -->
+            <section class="mb-24">
+                <div class="space-y-8">
+                    <div class="text-center sm:text-left">
+                        <span
+                            class="text-jc-blue-600 dark:text-jc-blue-400 font-bold tracking-widest uppercase text-xs">Wesprzyj
+                            moją działalność</span>
+                        <h2 id="wsparcie"
+                            class="text-3xl font-bold text-gray-900 dark:text-white mt-2 scroll-mt-24">
+                            Dołącz do społeczności JustCloud
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2 max-w-2xl">
+                            Jeśli lubisz moje materiały i warsztaty, możesz pomóc mi rozwijać kolejne
+                            inicjatywy. Wybierz formę, która najlepiej do Ciebie pasuje.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-8">
+                        <div
+                            class="relative group overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:shadow-lg hover:border-jc-blue-300 dark:hover:border-jc-blue-600 transition-all duration-300 flex flex-col lg:flex-row gap-6 lg:gap-8">
+                            <!-- Obrazek -->
+                            <div class="w-full lg:w-2/5 flex justify-center flex-shrink-0">
+                                <img src="img/Koszulka JustCloud - Wspólne light (new).png"
+                                    alt="Koszulka JustCloud w trybie jasnym"
+                                    class="block dark:hidden w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <img src="img/Koszulka JustCloud - Wspólne dark (new).png"
+                                    alt="Koszulka JustCloud w trybie ciemnym"
+                                    class="hidden dark:block w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                            </div>
+
+                            <!-- Zawartość -->
+                            <div class="w-full lg:w-3/5 flex flex-col justify-center">
+                                <div class="flex items-start gap-4 mb-6">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-gradient-to-br from-jc-blue-100 to-jc-blue-50 dark:from-jc-blue-900/40 dark:to-jc-blue-900/20 text-jc-blue-600 dark:text-jc-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Koszulka JustCloud
+                                        </h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">3 kolory, krój damski i
+                                            męski. Wysyłka na terenie PL.</p>
+                                    </div>
+                                    <span
+                                        class="px-3 py-1 text-xs font-semibold rounded-full bg-jc-blue-100 text-jc-blue-700 dark:bg-jc-blue-900 dark:text-jc-blue-200 whitespace-nowrap">Limitowana
+                                        edycja</span>
+                                </div>
+
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700 dark:text-gray-200 mb-6">
+                                    <div class="relative pl-6"><span
+                                            class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Nowoczesny
+                                            nadruk z logo JustCloud</span></div>
+                                    <div class="relative pl-6"><span
+                                            class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Kolory:
+                                            oliwkowy, niebieski, antracytowy</span></div>
+                                    <div class="relative pl-6"><span
+                                            class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Rozmiary
+                                            od XS do XXL</span></div>
+                                    <div class="relative pl-6"><span
+                                            class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Krój
+                                            damski i męski</span></div>
+                                    <div class="relative pl-6"><span
+                                            class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Wysoka
+                                            jakość bawełny</span></div>
+                                    <div class="relative pl-6"><span
+                                            class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Trwały
+                                            nadruk</span></div>
+                                </div>
+
+                                <a href="https://www.amazon.de/dp/B0DKG14G65" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center justify-center px-6 py-3 text-base bg-jc-blue-600 text-white font-bold rounded-xl shadow-sm hover:bg-jc-blue-700 hover:shadow-md transition-all dark:bg-jc-blue-600 dark:hover:bg-jc-blue-500 w-full sm:w-auto">
+                                    Zamów koszulkę na Amazon 🛍️
+                                </a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="relative group overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:shadow-lg hover:border-amber-300 dark:hover:border-amber-600 transition-all duration-300 flex flex-col lg:flex-row gap-6 lg:gap-8">
+                            <!-- Obrazek -->
+                            <div class="w-full lg:w-2/5 flex justify-center flex-shrink-0">
+                                <img src="img/Kawa - Light.png" alt="Kawa dla twórcy w trybie jasnym"
+                                    class="block dark:hidden w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                                <img src="img/Kawa - Dark.png" alt="Kawa dla twórcy w trybie ciemnym"
+                                    class="hidden dark:block w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">
+                            </div>
+
+                            <!-- Zawartość -->
+                            <div class="w-full lg:w-3/5 flex flex-col justify-center">
+                                <div class="flex items-start gap-4 mb-6">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900/40 dark:to-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Kawa dla twórcy
+                                        </h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Szybki sposób, by
+                                            wesprzeć dalsze materiały i warsztaty.</p>
+                                    </div>
+                                    <span
+                                        class="px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 whitespace-nowrap">Szybkie
+                                        wsparcie</span>
+                                </div>
+
+                                <div class="space-y-3 text-sm text-gray-700 dark:text-gray-200 mb-6">
+                                    <div class="flex items-start gap-3">
+                                        <span class="w-2.5 h-2.5 mt-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
+                                        <span>Wybierasz wsparcie jednorazowe lub cykliczne według uznania.</span>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="w-2.5 h-2.5 mt-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
+                                        <span>Twoje wsparcie pozwala mi tworzyć więcej darmowych materiałów i pokryć koszty infrastruktury.</span>
+                                    </div>
+                                </div>
+
+                                <a href="https://buycoffee.to/justcloud" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center justify-center px-6 py-3 text-base bg-amber-500 text-white font-bold rounded-xl shadow-sm hover:bg-amber-600 hover:shadow-md transition-all dark:bg-amber-600 dark:hover:bg-amber-700 w-full sm:w-auto">
+                                    Postaw kawę ☕
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Custom Training CTA -->
+            <section class="mb-20">
+                <div
+                    class="rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+
+                    <div class="text-center md:text-left max-w-2xl">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                            Potrzebujesz szkolenia "szytego na miarę"?
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+                            Przygotuję zamknięty warsztat dla Twojego zespołu, dopasowany do Waszego stacku (Terraform
+                            modules, Azure Governance, Security).
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                        <a href="index.html#contact"
+                            class="px-6 py-3 bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 font-bold text-sm rounded-lg dark:hover:bg-gray-100 transition-colors text-center whitespace-nowrap shadow-lg shadow-gray-900/10 dark:shadow-white/10">
+                            Napisz do mnie
+                        </a>
+                        <a href="https://tidycal.com/justcloud/15-minute-meeting" target="_blank"
+                            class="px-6 py-3 border border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 dark:border-gray-600 dark:text-gray-300 font-medium text-sm rounded-lg dark:hover:border-white dark:hover:text-white transition-colors text-center whitespace-nowrap">
+                            Rozmowa (15 min)
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-sm text-gray-500 dark:text-gray-500">
+                <p>&copy; 2025 JustCloud.pl. Wszystkie prawa zastrzeżone.</p>
+                <p class="mt-2">
+                    <a href="privacy-policy.html"
+                        class="text-jc-blue-400 dark:text-jc-blue-300 hover:underline">Polityka prywatności i
+                        cookies</a>
+                    <span class="mx-2">|</span>
+                    <button id="cookie-settings-footer"
+                        class="text-jc-blue-400 dark:text-jc-blue-300 hover:underline cursor-pointer">Ustawienia
+                        cookies</button>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- Theme Toggle Script -->
+    <script>
+            (function () {
+                const themeToggleBtnDesktop = document.getElementById('theme-toggle-desktop');
+                const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+                const darkIcons = document.querySelectorAll('.theme-toggle-dark-icon');
+                const lightIcons = document.querySelectorAll('.theme-toggle-light-icon');
+                const html = document.documentElement;
+
+                // Check for saved theme preference or default to system preference
+                const getThemePreference = () => {
+                    if (localStorage.getItem('theme')) {
+                        return localStorage.getItem('theme');
+                    }
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                };
+
+                // Set theme
+                const setTheme = (theme) => {
+                    if (theme === 'dark') {
+                        html.classList.add('dark');
+                        darkIcons.forEach(icon => icon?.classList.remove('hidden'));
+                        lightIcons.forEach(icon => icon?.classList.add('hidden'));
+                    } else {
+                        html.classList.remove('dark');
+                        darkIcons.forEach(icon => icon?.classList.add('hidden'));
+                        lightIcons.forEach(icon => icon?.classList.remove('hidden'));
+                    }
+                    localStorage.setItem('theme', theme);
+                };
+
+                // Initialize theme
+                setTheme(getThemePreference());
+
+                // Toggle theme function
+                const toggleTheme = () => {
+                    const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                };
+
+                // Add event listeners to both buttons
+                themeToggleBtnDesktop?.addEventListener('click', toggleTheme);
+                themeToggleBtnMobile?.addEventListener('click', toggleTheme);
+            })();
+    </script>
+</body>
+
+</html>

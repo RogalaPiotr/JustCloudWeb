@@ -20,6 +20,7 @@ npm-debug.log
 yarn-error.log
 
 # tmp
-warsztaty.html
+#warsztaty-darmowe.html
+warsztaty-płatne.html
 data/**
-backups/**
+backups
