@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
+    <!-- Google Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    
     <!-- Primary Meta Tags -->
     <title>Wideo i Prezentacje - JustCloud.pl</title>
     <meta name="title" content="Wideo i Prezentacje - JustCloud.pl">
@@ -711,6 +723,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 dark:bg-gray-950 border-t border-gray-700 dark:border-gray-800 p-3 sm:p-4 z-50 translate-y-full transition-transform duration-300 hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs sm:text-sm text-gray-300 dark:text-gray-400">
+                        Używamy plików cookie do analizy ruchu (Google Analytics), aby zapewnić najlepsze doświadczenia na naszej stronie. Czy wyrażasz zgodę? 
+                        <a href="privacy-policy.html" class="text-jc-blue-400 dark:text-jc-blue-300 hover:underline whitespace-nowrap">Polityka Prywatności</a>
+                    </p>
+                </div>
+                <div class="flex gap-2 sm:gap-3 flex-shrink-0">
+                    <button id="cookie-reject" class="flex-1 sm:flex-none px-4 py-1.5 text-xs sm:text-sm text-gray-400 hover:text-white border border-gray-700 hover:border-gray-600 rounded transition-colors">
+                        Odrzuć
+                    </button>
+                    <button id="cookie-accept" class="flex-1 sm:flex-none px-4 py-1.5 text-xs sm:text-sm bg-jc-blue-600 hover:bg-jc-blue-700 text-white font-medium rounded transition-colors">
+                        Akceptuję
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
