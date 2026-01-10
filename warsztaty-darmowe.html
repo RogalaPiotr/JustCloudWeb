@@ -289,6 +289,81 @@
                 </div>
             </section>
 
+            <!-- Countdown: Next Workshop (27 stycznia 2026, 18:00) -->
+            <section class="mb-16" aria-label="Odliczanie do najbliższego warsztatu">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-jc-blue-500 to-cyan-500 rounded-[1.5rem] blur opacity-20 group-hover:opacity-40 transition duration-700">
+                    </div>
+
+                    <div
+                        class="relative bg-white dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-700 rounded-[1.5rem] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+                        <div class="space-y-1">
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Odliczanie do warsztatu</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">27 stycznia 2026 • 18:00 (CET)</p>
+                        </div>
+
+                        <div class="flex items-center gap-3 sm:gap-4 font-mono text-gray-900 dark:text-gray-100" aria-live="polite">
+                            <div class="text-center">
+                                <div id="cd-days" class="text-2xl sm:text-3xl font-bold">--</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">dni</div>
+                            </div>
+                            <span class="text-2xl sm:text-3xl text-gray-400">:</span>
+                            <div class="text-center">
+                                <div id="cd-hours" class="text-2xl sm:text-3xl font-bold">--</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">godz</div>
+                            </div>
+                            <span class="text-2xl sm:text-3xl text-gray-400">:</span>
+                            <div class="text-center">
+                                <div id="cd-mins" class="text-2xl sm:text-3xl font-bold">--</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">min</div>
+                            </div>
+                            <span class="text-2xl sm:text-3xl text-gray-400">:</span>
+                            <div class="text-center">
+                                <div id="cd-secs" class="text-2xl sm:text-3xl font-bold">--</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">s</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    (function () {
+                        // Event time: 27 Jan 2026 18:00 CET (UTC+01:00)
+                        var target = new Date('2026-01-27T18:00:00+01:00');
+
+                        function pad(n) { return String(n).padStart(2, '0'); }
+
+                        function update() {
+                            var now = new Date();
+                            var diff = target - now;
+
+                            if (diff <= 0) {
+                                document.getElementById('cd-days').textContent = '00';
+                                document.getElementById('cd-hours').textContent = '00';
+                                document.getElementById('cd-mins').textContent = '00';
+                                document.getElementById('cd-secs').textContent = '00';
+                                clearInterval(timer);
+                                return;
+                            }
+
+                            var days = Math.floor(diff / 86400000); // 24*60*60*1000
+                            var hours = Math.floor((diff % 86400000) / 3600000);
+                            var mins = Math.floor((diff % 3600000) / 60000);
+                            var secs = Math.floor((diff % 60000) / 1000);
+
+                            document.getElementById('cd-days').textContent = days;
+                            document.getElementById('cd-hours').textContent = pad(hours);
+                            document.getElementById('cd-mins').textContent = pad(mins);
+                            document.getElementById('cd-secs').textContent = pad(secs);
+                        }
+
+                        update();
+                        var timer = setInterval(update, 1000);
+                    })();
+                </script>
+            </section>
+
             <!-- Workshops: January details + Upcoming months -->
             <section class="mb-24 space-y-12">
 
