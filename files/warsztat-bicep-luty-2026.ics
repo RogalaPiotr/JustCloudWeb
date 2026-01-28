@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//JustCloud.pl//Warsztaty//PL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:noreply@justcloud.pl
+DTSTART:20260224T180000Z
+DTEND:20260224T210000Z
+DTSTAMP:20260128T000000Z
+SUMMARY:Warsztaty Bicep: Fundamenty Enterprise (JustCloud.pl)
+DESCRIPTION:Darmowe warsztaty dla inżynierów. Uczymy się Bicep, Azure i DevOps w standardzie Enterprise.\n\nLink do spotkania zostanie przesłany po rejestracji.\n\nWięcej informacji: https://web.justcloud.pl/warsztaty-darmowe.html
+LOCATION:Online
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR
