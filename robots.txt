@@ -9,6 +9,10 @@ Crawl-delay: 1
 # Do not index brand page
 Disallow: /brand.html
 
+# Do not index utility pages
+Disallow: /newsletter-end-page.html
+Disallow: /404.html
+
 # Sitemaps (for all search engines)
 Sitemap: https://web.justcloud.pl/sitemap.xml
 

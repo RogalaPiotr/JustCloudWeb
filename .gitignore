@@ -24,3 +24,5 @@ yarn-error.log
 warsztaty-płatne.html
 data/**
 backups
+.bak
+.github
