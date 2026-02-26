@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<!-- Head: Meta, SEO, Tailwind, styles -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Google Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <title>Warsztat Bicep: Fundamenty Enterprise (24.02.2026) | JustCloud.pl</title>
+    <meta name="title" content="Warsztat Bicep: Fundamenty Enterprise (24.02.2026) | JustCloud.pl">
+
+    <meta name="description"
+        content="Nagranie i materiały z warsztatu Bicep: Fundamenty Enterprise. Poznaj praktyczne zastosowanie Bicep w projektach Enterprise z naciskiem na architekturę, bezpieczeństwo i pracę zespołową.">
+
+    <meta name="author" content="Piotr Rogala - JustCloud.pl">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://web.justcloud.pl/warsztat-bicep-luty-2026.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://web.justcloud.pl/warsztat-bicep-luty-2026.html">
+    <meta property="og:title" content="Warsztat Bicep: Fundamenty Enterprise">
+    <meta property="og:description"
+        content="Nagranie i materiały z warsztatu online Bicep dla inżynierów. Standardy Enterprise w praktyce.">
+    <meta property="og:image" content="https://web.justcloud.pl/img/justcloud-social-card.png">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="JustCloud.pl">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://web.justcloud.pl/warsztat-bicep-luty-2026.html">
+    <meta name="twitter:title" content="Warsztat Bicep: Fundamenty Enterprise">
+    <meta name="twitter:description"
+        content="Nagranie i materiały z warsztatu online Bicep dla inżynierów.">
+    <meta name="twitter:image" content="https://web.justcloud.pl/img/justcloud-social-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "Bicep: Fundamenty Enterprise",
+      "description": "Praktyczne zastosowanie Bicep w projektach Enterprise. Architektura, bezpieczeństwo i praca zespołowa.",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://web.justcloud.pl/warsztat-bicep-luty-2026.html"
+      },
+      "startDate": "2026-02-24T18:00:00+01:00",
+      "endDate": "2026-02-24T21:00:00+01:00",
+      "organizer": {
+        "@type": "Person",
+        "name": "Piotr Rogala",
+        "jobTitle": "Microsoft MVP, Principal Cloud Architect",
+        "url": "https://justcloud.pl"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Piotr Rogala"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/InStock",
+        "url": "https://web.justcloud.pl/warsztat-bicep-luty-2026.html",
+        "validFrom": "2026-02-01"
+      },
+      "isAccessibleForFree": true,
+      "inLanguage": "pl-PL",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Cloud Engineers, DevOps Engineers, Infrastructure Engineers"
+      },
+      "recordedIn": {
+        "@type": "CreativeWork",
+        "name": "Nagranie warsztatu dostępne po rejestracji"
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'jc-blue': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body
+    class="font-inter antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header: Navbar + Theme toggle -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="JustCloud.pl Logo" class="h-12 w-auto" loading="eager">
+                    <span
+                        class="font-space-mono font-bold text-xl sm:text-2xl text-jc-blue-600 dark:text-jc-blue-300">JustCloud.pl</span>
+                </a>
+
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle-desktop" type="button"
+                        class="hidden md:block p-2 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        aria-label="Toggle dark mode">
+                        <svg class="theme-toggle-dark-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg class="theme-toggle-light-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <a href="warsztaty-darmowe.html"
+                        class="px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-jc-blue-600 dark:hover:text-jc-blue-300 transition-colors">
+                        ← Powrót do warsztatów
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <div class="flex flex-wrap justify-center gap-3 mb-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-sm font-bold uppercase tracking-wider shadow-sm">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Warsztat odbył się
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-jc-blue-50 dark:bg-jc-blue-900/30 border border-jc-blue-200 dark:border-jc-blue-800 text-jc-blue-700 dark:text-jc-blue-300 text-sm font-bold uppercase tracking-wider shadow-sm">
+                        24 lutego 2026
+                    </div>
+                </div>
+                
+                <h1
+                    class="font-space-mono text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Bicep:<br class="hidden lg:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-jc-blue-600 to-cyan-500">Fundamenty Enterprise</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+                    To nie były podstawy typu "Hello World". To praktyczne zastosowanie Bicep w projektach Azure, 
+                    gdzie stabilność i bezpieczeństwo są kluczowe. Uczestnicy nauczyli się architektu Infrastructure as Code, 
+                    bezpieczeństwa i pracy zespołowej w praktyce Enterprise.
+                </p>
+
+                <div class="flex items-center justify-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>3 godziny</span>
+                    </div>
+                    <span class="text-gray-300 dark:text-gray-600">•</span>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span>100+ uczestników</span>
+                    </div>
+                    <span class="text-gray-300 dark:text-gray-600">•</span>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>Nagranie dostępne</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Form for Recording Access -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-br from-jc-blue-50 to-cyan-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 sm:p-12 border border-jc-blue-200 dark:border-gray-700 shadow-xl">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-sm font-bold mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                            Dostęp do nagrania i materiałów
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                            Zapisz się żeby otrzymać dostęp
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            Podaj swój adres email, a otrzymasz link do nagrania warsztatu oraz dostęp do repozytorium GitHub z kodem i materiałami.
+                        </p>
+                    </div>
+
+                    <div class="max-w-lg mx-auto">
+                        <form method="post" action="https://sendfox.com/form/m5ewjl/3qll8w" class="sendfox-form space-y-6" id="3qll8w" data-async="true" data-recaptcha="true">
+                            <div>
+                                <label for="sendfox_form_name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                                    Imię
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="sendfox_form_name" 
+                                    name="first_name" 
+                                    placeholder="Twoje imię" 
+                                    required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-jc-blue-500 focus:border-transparent transition-all"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="sendfox_form_email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                                    Email
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="sendfox_form_email" 
+                                    name="email" 
+                                    placeholder="twoj@email.pl" 
+                                    required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-jc-blue-500 focus:border-transparent transition-all"
+                                />
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5 mt-1">
+                                    <input 
+                                        type="checkbox" 
+                                        name="gdpr" 
+                                        value="1" 
+                                        required
+                                        id="gdpr_checkbox"
+                                        class="w-4 h-4 rounded border-gray-300 dark:border-gray-600 text-jc-blue-600 focus:ring-jc-blue-500 dark:bg-gray-800"
+                                    />
+                                </div>
+                                <label for="gdpr_checkbox" class="ml-3 text-sm text-gray-600 dark:text-gray-400">
+                                    Wyrażam zgodę na otrzymywanie informacji o warsztatach i aktualizacji emailem.
+                                </label>
+                            </div>
+
+                            <!-- no botz please -->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" />
+                            </div>
+
+                            <button 
+                                type="submit"
+                                class="w-full px-8 py-4 bg-gradient-to-r from-jc-blue-600 to-cyan-500 hover:from-jc-blue-700 hover:to-cyan-600 text-white font-bold rounded-xl transition-all hover:shadow-lg hover:scale-[1.02] flex items-center justify-center gap-2"
+                            >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                Wyślij mi dostęp do materiałów
+                            </button>
+                        </form>
+                        <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8"></script>
+
+                        <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
+                            <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                            Twoje dane są bezpieczne. Nie spamujemy.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workshop Topics -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                    Czego się nauczyliśmy
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-jc-blue-50 dark:bg-jc-blue-900/30 text-jc-blue-600 dark:text-jc-blue-400 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Struktura Projektu (Modularyzacja)</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Dlaczego jeden plik <code class="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">main.bicep</code> to pułapka? 
+                                    Podział na <code class="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">modules</code>, 
+                                    parametryzacja i skalowalna architektura Bicep.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-jc-blue-50 dark:bg-jc-blue-900/30 text-jc-blue-600 dark:text-jc-blue-400 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Multi-Environment Workflow</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    <code class="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">.bicepparam</code> pliki dla dev/test/prod. 
+                                    Deployment na poziomie subskrypcji z <code class="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">targetScope</code>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-jc-blue-50 dark:bg-jc-blue-900/30 text-jc-blue-600 dark:text-jc-blue-400 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Secrets Management</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Key Vault z RBAC i auto-generated sekretami. Bicep <code class="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">existing</code> keyword 
+                                    i <code class="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">getSecret()</code> dla referencji.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-jc-blue-300 dark:hover:border-jc-blue-700 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-jc-blue-50 dark:bg-jc-blue-900/30 text-jc-blue-600 dark:text-jc-blue-400 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Azure Verified Modules (AVM)</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Microsoft-maintained moduły z repozytorium publicznego. Lifecycle management i best practices wbudowane.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What You'll Get -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                    Co otrzymasz po zapisaniu się
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 p-3 rounded-xl bg-jc-blue-50 dark:bg-jc-blue-900/30 text-jc-blue-600 dark:text-jc-blue-400">
+                            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-2">Nagranie warsztatu</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            Pełne 3-godzinne nagranie z live coding, wyjaśnieniami i Q&A
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 p-3 rounded-xl bg-jc-blue-50 dark:bg-jc-blue-900/30 text-jc-blue-600 dark:text-jc-blue-400">
+                            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-2">Repozytorium GitHub</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            Kompletny kod Bicep, strukturę projektów i materiały gotowe do użycia
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Workshop CTA -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-8 sm:p-10 text-white text-center">
+                    <h2 class="text-3xl font-bold mb-4">Podobał Ci się warsztat?</h2>
+                    <p class="text-lg mb-6 text-indigo-100">Dołącz do kolejnych edycji i rozwijaj swoje kompetencje Enterprise!</p>
+                    <a href="warsztaty-darmowe.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-600 font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-lg">
+                        Zobacz nadchodzące warsztaty
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Support Options: Koszulka & Kawa -->
+            <section class="mb-16">
+                <div class="space-y-8">
+                    <div class="text-center">
+                        <span class="text-jc-blue-600 dark:text-jc-blue-400 font-bold tracking-widest uppercase text-xs">Wesprzyj moją działalność</span>
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-2">
+                            Dołącz do społeczności JustCloud
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+                            Jeśli lubisz moje materiały i warsztaty, możesz pomóc mi rozwijać kolejne inicjatywy. Wybierz formę, która najlepiej do Ciebie pasuje.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-8">
+                        <div class="relative group overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:shadow-lg hover:border-jc-blue-300 dark:hover:border-jc-blue-600 transition-all duration-300 flex flex-col lg:flex-row gap-6 lg:gap-8">
+                            <!-- Obrazek -->
+                            <div class="w-full lg:w-2/5 flex justify-center flex-shrink-0">
+                                <img src="img/Koszulka JustCloud - Wspólne light (new).png" alt="Koszulka JustCloud w trybie jasnym" class="block dark:hidden w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300" loading="lazy">
+                                <img src="img/Koszulka JustCloud - Wspólne dark (new).png" alt="Koszulka JustCloud w trybie ciemnym" class="hidden dark:block w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300" loading="lazy">
+                            </div>
+
+                            <!-- Zawartość -->
+                            <div class="w-full lg:w-3/5 flex flex-col justify-center">
+                                <div class="flex items-start gap-4 mb-6">
+                                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-jc-blue-100 to-jc-blue-50 dark:from-jc-blue-900/40 dark:to-jc-blue-900/20 text-jc-blue-600 dark:text-jc-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Koszulka JustCloud</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">3 kolory, krój damski i męski. Wysyłka na terenie PL.</p>
+                                    </div>
+                                    <span class="px-3 py-1 text-xs font-semibold rounded-full bg-jc-blue-100 text-jc-blue-700 dark:bg-jc-blue-900 dark:text-jc-blue-200 whitespace-nowrap">Limitowana edycja</span>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700 dark:text-gray-200 mb-6">
+                                    <div class="relative pl-6"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Nowoczesny nadruk z logo JustCloud</span></div>
+                                    <div class="relative pl-6"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Kolory: oliwkowy, niebieski, antracytowy</span></div>
+                                    <div class="relative pl-6"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Rozmiary od XS do XXL</span></div>
+                                    <div class="relative pl-6"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Krój damski i męski</span></div>
+                                    <div class="relative pl-6"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Wysoka jakość bawełny</span></div>
+                                    <div class="relative pl-6"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-jc-blue-500"></span><span>Trwały nadruk</span></div>
+                                </div>
+
+                                <a href="https://www.amazon.de/dp/B0DKG14G65" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-base bg-jc-blue-600 text-white font-bold rounded-xl shadow-sm hover:bg-jc-blue-700 hover:shadow-md transition-all dark:bg-jc-blue-600 dark:hover:bg-jc-blue-500 w-full sm:w-auto">
+                                    Zamów koszulkę na Amazon 🛍️
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="relative group overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:shadow-lg hover:border-amber-300 dark:hover:border-amber-600 transition-all duration-300 flex flex-col lg:flex-row gap-6 lg:gap-8">
+                            <!-- Obrazek -->
+                            <div class="w-full lg:w-2/5 flex justify-center flex-shrink-0">
+                                <img src="img/Kawa - Light.png" alt="Kawa dla twórcy w trybie jasnym" class="block dark:hidden w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300" loading="lazy">
+                                <img src="img/Kawa - Dark.png" alt="Kawa dla twórcy w trybie ciemnym" class="hidden dark:block w-full max-w-sm rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300" loading="lazy">
+                            </div>
+
+                            <!-- Zawartość -->
+                            <div class="w-full lg:w-3/5 flex flex-col justify-center">
+                                <div class="flex items-start gap-4 mb-6">
+                                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900/40 dark:to-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Kawa dla twórcy</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Szybki sposób, by wesprzeć dalsze materiały i warsztaty.</p>
+                                    </div>
+                                    <span class="px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 whitespace-nowrap">Szybkie wsparcie</span>
+                                </div>
+
+                                <div class="space-y-3 text-sm text-gray-700 dark:text-gray-200 mb-6">
+                                    <div class="flex items-start gap-3">
+                                        <span class="w-2.5 h-2.5 mt-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
+                                        <span>Wybierasz wsparcie jednorazowe lub cykliczne według uznania.</span>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="w-2.5 h-2.5 mt-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
+                                        <span>Twoje wsparcie pozwala mi tworzyć więcej darmowych materiałów i pokryć koszty infrastruktury.</span>
+                                    </div>
+                                </div>
+
+                                <a href="https://buycoffee.to/justcloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-base bg-amber-500 text-white font-bold rounded-xl shadow-sm hover:bg-amber-600 hover:shadow-md transition-all dark:bg-amber-600 dark:hover:bg-amber-700 w-full sm:w-auto">
+                                    Postaw kawę ☕
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-sm text-gray-500 dark:text-gray-500">
+                <p>&copy; 2026 JustCloud.pl. Wszystkie prawa zastrzeżone.</p>
+                <p class="mt-2">
+                    <a href="privacy-policy.html"
+                        class="hover:text-jc-blue-400 transition-colors">Polityka prywatności i
+                        cookies</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- Theme Toggle Script -->
+    <script>
+        (function () {
+            const themeToggleBtnDesktop = document.getElementById('theme-toggle-desktop');
+            const darkIcons = document.querySelectorAll('.theme-toggle-dark-icon');
+            const lightIcons = document.querySelectorAll('.theme-toggle-light-icon');
+            const html = document.documentElement;
+
+            // Check for saved theme preference or default to system preference
+            const getThemePreference = () => {
+                if (localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            // Set theme
+            const setTheme = (theme) => {
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    darkIcons.forEach(icon => icon?.classList.remove('hidden'));
+                    lightIcons.forEach(icon => icon?.classList.add('hidden'));
+                } else {
+                    html.classList.remove('dark');
+                    darkIcons.forEach(icon => icon?.classList.add('hidden'));
+                    lightIcons.forEach(icon => icon?.classList.remove('hidden'));
+                }
+                localStorage.setItem('theme', theme);
+            };
+
+            // Initialize theme
+            setTheme(getThemePreference());
+
+            // Toggle theme function
+            const toggleTheme = () => {
+                const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            };
+
+            // Add event listener
+            themeToggleBtnDesktop?.addEventListener('click', toggleTheme);
+        })();
+    </script>
+</body>
+
+</html>
