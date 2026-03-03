@@ -256,17 +256,16 @@
         // Show cookie banner
         showBanner() {
             if (cookieBanner) {
-                cookieBanner.classList.remove('hidden');
-                setTimeout(() => {
-                    cookieBanner.style.transform = 'translateY(0)';
-                }, 100);
+                cookieBanner.classList.remove('hidden', 'translate-y-full');
+                // Force reflow to ensure transition works
+                cookieBanner.offsetHeight;
             }
         },
 
         // Hide cookie banner
         hideBanner() {
             if (cookieBanner) {
-                cookieBanner.style.transform = 'translateY(100%)';
+                cookieBanner.classList.add('translate-y-full');
                 setTimeout(() => {
                     cookieBanner.classList.add('hidden');
                 }, 300);
@@ -296,6 +295,17 @@
         rejectAnalytics() {
             this.saveConsent(false);
             this.hideBanner();
+
+            // Update consent mode to deny analytics
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            }
+
             console.log('❌ Cookies rejected: Only essential cookies active');
         },
 
@@ -313,19 +323,27 @@
             }
 
             // Accept button
-            cookieAcceptBtn?.addEventListener('click', () => {
-                this.acceptAnalytics();
-            });
+            if (cookieAcceptBtn) {
+                cookieAcceptBtn.addEventListener('click', () => {
+                    this.acceptAnalytics();
+                });
+            }
 
             // Reject button
-            cookieRejectBtn?.addEventListener('click', () => {
-                this.rejectAnalytics();
-            });
+            if (cookieRejectBtn) {
+                cookieRejectBtn.addEventListener('click', () => {
+                    this.rejectAnalytics();
+                });
+            }
 
             // Settings button in footer - show banner again
-            cookieSettingsFooter?.addEventListener('click', () => {
-                this.showBanner();
-            });
+            if (cookieSettingsFooter) {
+                cookieSettingsFooter.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.showBanner();
+                });
+            }
 
             // Handle URL hash for cookie settings
             if (window.location.hash === '#cookie-settings') {
