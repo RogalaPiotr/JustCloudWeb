@@ -4,7 +4,6 @@
 # Default rules for all crawlers
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
 # Do not index brand page
 Disallow: /brand.html
@@ -28,6 +27,7 @@ Allow: /sitemap.xml
 Allow: /favicon.ico
 Allow: /site.webmanifest
 Allow: /BingSiteAuth.xml
+Allow: /llms.txt
 
 # Logo and social media images (important for rich snippets!)
 Allow: /img/logo.png

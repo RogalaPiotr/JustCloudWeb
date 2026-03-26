@@ -1,0 +1,36 @@
+# JustCloud.pl
+
+> Piotr Rogala – Principal Cloud Architect, Microsoft MVP (od 2017), Microsoft Certified Trainer (MCT). Specjalizacja: architektura Microsoft Azure, Infrastructure as Code (Terraform, Bicep), DevOps, automatyzacja chmury. Dostępny online dla całej Polski.
+
+Strona JustCloud.pl to platforma edukacyjna i ekspercka dotycząca Microsoft Azure. Zawiera darmowe warsztaty online, nagrania wideo z konferencji, artykuły na blogu oraz informacje o szkoleniach dedykowanych dla zespołów firmowych (B2B).
+
+## Strony
+
+- [Strona główna](https://web.justcloud.pl/): Kim jest Piotr Rogala, zakres usług, linki do społeczności (Newsletter, Discord)
+- [Darmowe warsztaty](https://web.justcloud.pl/warsztaty-darmowe.html): Cykliczne warsztaty online z Azure, Terraform, DevOps i kontenerów – rejestracja i archiwum
+- [Wideo i Prezentacje](https://web.justcloud.pl/wideo-i-prezentacje.html): Nagrania wystąpień konferencyjnych i meetupowych (2017–2026), tematy: Azure Policy, Terraform, IaC, DevOps, Landing Zone
+- [Blog JustCloud](https://blog.justcloud.pl/): Artykuły techniczne o Azure, Terraform, Bicep, DevOps i automatyzacji chmury
+- [Polityka prywatności](https://web.justcloud.pl/privacy-policy.html): Informacje o przetwarzaniu danych i cookies
+
+## Zasoby zewnętrzne
+
+- [Prezentacje na GitHub](https://github.com/RogalaPiotr/Presentations): Pliki slajdów ze wszystkich wystąpień konferencyjnych
+
+## Zakres tematyczny
+
+- Microsoft Azure (architektura, governance, automatyzacja, optymalizacja kosztów)
+- Infrastructure as Code: Terraform, Bicep
+- Azure DevOps, GitHub Actions, CI/CD
+- Azure Policy, EPAC (Enterprise Policy as Code)
+- Azure Landing Zone
+- Kontenery, AKS
+- Certyfikaty Microsoft: AZ-104, AZ-140, AZ-204, AZ-305, AZ-400, AZ-500, AZ-700, AZ-900
+
+## Autor
+
+**Piotr Rogala**
+- Microsoft MVP w kategorii Microsoft Azure (od 2017)
+- Microsoft Certified Trainer (MCT)
+- Principal Cloud Architect z doświadczeniem w projektach enterprise
+- Lokalizacja: Wrocław / działalność ogólnopolska (online)
+- Kontakt: przez formularz na stronie głównej lub LinkedIn
