@@ -633,8 +633,8 @@
             if (hasAnimated) return; // Animate only once
             hasAnimated = true;
             
-            // Project start date: March 29, 2024
-            const startDate = new Date('2024-03-29');
+            // Project start date: March 6, 2024
+            const startDate = new Date('2024-03-06');
             const today = new Date();
             
             // Calculate difference in days
